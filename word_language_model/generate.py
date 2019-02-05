@@ -1,5 +1,5 @@
 ###############################################################################
-# Language Modeling on Penn Tree Bank
+# Language Modeling on Wikitext-2
 #
 # This file generates new sentences sampled from the language model
 #
@@ -8,7 +8,6 @@
 import argparse
 
 import torch
-from torch.autograd import Variable
 
 import data
 
