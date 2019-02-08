@@ -231,9 +231,10 @@ def main_worker(gpu, ngpus_per_node, args):
         if args.distributed:
             train_sampler.set_epoch(epoch)
         adjust_learning_rate(optimizer, epoch, args)
-
+        epoch_start = time.time()
         # train for one epoch
         train(train_loader, model, criterion, optimizer, epoch, args)
+        print('Epoch {} took time: {}'.format(epoch, time.time() - epoch_start))
 
         # evaluate on validation set
         acc1 = validate(val_loader, model, criterion, args)
